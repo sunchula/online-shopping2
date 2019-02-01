@@ -21,9 +21,15 @@
 <meta name="author" content="">
 
 <title>Online Shopping - ${title}</title>
+<script>
+	window.menu = '${title}';
+</script>
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Luman Theme  -->
+<link href="${css}/bootstrap-luman-theme.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -32,32 +38,38 @@
 
 <body>
 
-	<!-- Navigation -->
-	<%@ include file="./shared/navbar.jsp"%>
+	<div class="wrapper">
 
-	<!-- Page Content -->
-	<c:if test="${userClickHome == true}">
-		<%@ include file="home.jsp"%>
-	</c:if>
+		<!-- Navigation -->
+		<%@ include file="./shared/navbar.jsp"%>
 
-	<!-- Load only when user click about -->
-	<c:if test="${userClickAbout == true}">
-		<%@ include file="about.jsp"%>
-	</c:if>
+		<!-- Page Content -->
+		<div class="content">
+			<c:if test="${userClickHome == true}">
+				<%@ include file="home.jsp"%>
+			</c:if>
 
-	<!-- Load only when user click aoutt -->
-	<c:if test="${userClickContact == true}">
-		<%@ include file="contact.jsp"%>
-	</c:if>
+			<!-- Load only when user click about -->
+			<c:if test="${userClickAbout == true}">
+				<%@ include file="about.jsp"%>
+			</c:if>
 
-	<!-- Footer -->
-	<%@ include file="./shared/footer.jsp"%>
+			<!-- Load only when user click aoutt -->
+			<c:if test="${userClickContact == true}">
+				<%@ include file="contact.jsp"%>
+			</c:if>
+		</div>
 
-	<!-- Bootstrap core JavaScript -->
-	<script src="${js}/jquery.min.js"></script>
-	<script src="${js}/jquery.js"></script>
-	<script src="${js}/bootstrap.bundle.min.js"></script>
+		<!-- Footer -->
+		<%@ include file="./shared/footer.jsp"%>
 
+		<!-- Bootstrap core JavaScript -->
+		<script src="${js}/jquery.min.js"></script>
+		<script src="${js}/jquery.js"></script>
+		<script src="${js}/bootstrap.bundle.min.js"></script>
+
+		<!-- Self added JS Script -->
+		<script src="${js}/myapp.js"></script>
+	</div>
 </body>
-
 </html>
