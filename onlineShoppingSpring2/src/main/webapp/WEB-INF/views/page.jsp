@@ -29,7 +29,7 @@
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
 <!-- Bootstrap Luman Theme  -->
-<link href="${css}/bootstrap-luman-theme.css" rel="stylesheet">
+<%-- <link href="${css}/bootstrap-luman-theme.css" rel="stylesheet"> --%>
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -54,9 +54,14 @@
 				<%@ include file="about.jsp"%>
 			</c:if>
 
-			<!-- Load only when user click aoutt -->
+			<!-- Load only when user click contact -->
 			<c:if test="${userClickContact == true}">
 				<%@ include file="contact.jsp"%>
+			</c:if>
+			
+			<!-- Load only when user click contact -->
+			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
+				<%@ include file="listProducts.jsp"%>
 			</c:if>
 		</div>
 
@@ -65,7 +70,7 @@
 
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery.min.js"></script>
-		<script src="${js}/jquery.js"></script>
+		<%-- <script src="${js}/jquery.js"></script> --%>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
 
 		<!-- Self added JS Script -->

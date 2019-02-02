@@ -38,14 +38,32 @@ public class CategoryDAOImpl implements CategoryDAO {
 		category.setDescription("This is Some Description of Laptop");
 		category.setImageURL("CAT_3.png");
 		categories.add(category);
-		
+
+		// adding Third category
+		category = new Category();
+		category.setId(4);
+		category.setName("IPOD");
+		category.setDescription("This is Some Description of IPOD");
+		category.setImageURL("CAT_4.png");
+		categories.add(category);
+
 		System.out.println(categories);
+
 	}
 
 	@Override
 	public List<Category> list() {
 		// TODO Auto-generated method stub
 		return categories;
+	}
+
+	@Override
+	public Category get(int id) {
+		for(Category category : categories) {
+			if(category.getId() == id)
+				return category;
+		}
+		return null;
 	}
 
 }
