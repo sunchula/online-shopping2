@@ -12,7 +12,7 @@ $(function() {
 		break
 	default:
 		$('#listProducts').addClass('active');
-		$('#a_'+menu).addclass('active');
+		$('#a_'+menu).addClass('active');
 		break
 	}
 });
